@@ -44,6 +44,11 @@ templates. See below for further instructions.
 Configuring Custom Templates
 ----------------------------
 
+A very simple error page is included with the package out of the box
+(see `the source <https://github.com/djperrefort/django-simple-error/blob/main/django_simple_error/templates/simple_error/default.html>`_
+if your interested in what that template looks like). However, users can easily
+customize their error pages by creating their own template files.
+
 By default, all HTTP errors are redirected to the HTML template located in
 your template directory under ``simple_error/default.html``. Template files
 can also be specified for individual HTTP error codes using the naming scheme
