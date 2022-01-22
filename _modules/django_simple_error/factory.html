@@ -82,7 +82,7 @@
 <span class="sd">    &quot;&quot;&quot;</span>
 
     <span class="k">try</span><span class="p">:</span>
-        <span class="n">template</span> <span class="o">=</span> <span class="s1">&#39;django_simple_error/http_</span><span class="si">{}</span><span class="s1">.html&#39;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">error_code</span><span class="p">)</span>
+        <span class="n">template</span> <span class="o">=</span> <span class="n">f</span><span class="s1">&#39;django_simple_error/http_</span><span class="si">{error_code}</span><span class="s1">.html&#39;</span>
         <span class="n">get_template</span><span class="p">(</span><span class="n">template</span><span class="p">)</span>
 
     <span class="k">except</span> <span class="n">TemplateDoesNotExist</span><span class="p">:</span>
@@ -100,7 +100,7 @@
 
         <span class="k">return</span> <span class="n">render</span><span class="p">(</span><span class="n">request</span><span class="p">,</span> <span class="n">template</span><span class="p">,</span> <span class="n">status</span><span class="o">=</span><span class="n">error_code</span><span class="p">,</span> <span class="n">context</span><span class="o">=</span><span class="p">{</span><span class="s1">&#39;error_code&#39;</span><span class="p">:</span> <span class="n">error_code</span><span class="p">})</span>
 
-    <span class="k">return</span> <span class="nb">type</span><span class="p">(</span><span class="s1">&#39;HttpErrorView</span><span class="si">{}</span><span class="s1">&#39;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">error_code</span><span class="p">),</span> <span class="p">(</span><span class="n">View</span><span class="p">,),</span> <span class="p">{</span><span class="s1">&#39;get&#39;</span><span class="p">:</span> <span class="n">get</span><span class="p">})</span></div>
+    <span class="k">return</span> <span class="nb">type</span><span class="p">(</span><span class="n">f</span><span class="s1">&#39;HttpErrorView</span><span class="si">{error_code}</span><span class="s1">&#39;</span><span class="p">,</span> <span class="p">(</span><span class="n">View</span><span class="p">,),</span> <span class="p">{</span><span class="s1">&#39;get&#39;</span><span class="p">:</span> <span class="n">get</span><span class="p">})</span></div>
 </pre></div>
 
            </div>
