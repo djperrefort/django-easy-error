@@ -23,4 +23,4 @@ def view_factory(error_code: int) -> callable:
 
         return render(request, template, status=error_code, context={'error_code': error_code})
 
-    return type('HttpError{}View', (object, View), {'get': get})
+    return type('HttpError{}View'.format(error_code), (View,), {'get': get})
