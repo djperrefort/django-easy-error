@@ -13,7 +13,7 @@ def view_factory(error_code: int) -> callable:
     """
 
     try:
-        template = 'django_simple_error/http_{}.html'.format(error_code)
+        template = f'django_simple_error/http_{error_code}.html'
         get_template(template)
 
     except TemplateDoesNotExist:
@@ -31,4 +31,4 @@ def view_factory(error_code: int) -> callable:
 
         return render(request, template, status=error_code, context={'error_code': error_code})
 
-    return type('HttpErrorView{}'.format(error_code), (View,), {'get': get})
+    return type(f'HttpErrorView{error_code}', (View,), {'get': get})
