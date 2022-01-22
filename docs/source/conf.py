@@ -17,7 +17,8 @@ extensions = [
     'sphinx.ext.viewcode',
     'sphinx.ext.autosummary',
     'sphinx.ext.napoleon',
-    'sphinx_copybutton'
+    'sphinx_copybutton',
+    'sphinx_autodoc_typehints'
 ]
 
 source_suffix = '.rst'
