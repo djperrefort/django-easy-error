@@ -10,7 +10,7 @@ def load_requirements():
 
 
 def get_meta():
-    init_path = Path(__file__).resolve().parent / 'django_keygen/__init__.py'
+    init_path = Path(__file__).resolve().parent / 'django_simple_error/__init__.py'
     with init_path.open('r') as infile:
         init_content = infile.read()
 
@@ -24,7 +24,7 @@ def get_meta():
 
 
 version, author = get_meta()
-setup(name='django-keygen',
+setup(name='django-simple-error',
       version=version,
       author=author,
       packages=find_packages(),

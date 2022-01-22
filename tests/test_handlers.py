@@ -1,32 +1,31 @@
-from importlib import reload
+import inspect
 from unittest import TestCase
-
-from django.test import override_settings
 
 from django_simple_error import handlers
 
 
-class HandlerDefinitions(TestCase):
-    """Tests the dynamic definition of error code handlers"""
+class HandlerSignatures(TestCase):
+    """Test handlers have compatible signatures with django"""
 
-    def test_default_handlers_are_defined(self) -> None:
-        """Test views are defined only for HTTP error codes from 400 through 599"""
+    @staticmethod
+    def get_argument_names(func: callable) -> tuple:
+        """Return a tuple of argument names taken by the given callable"""
 
-        for i in range(0, 400):
-            self.assertFalse(hasattr(handlers, f'handler{i}'))
+        signature = inspect.signature(func)
+        arg_names = tuple(signature.parameters.keys())
+        return arg_names
 
-        for i in range(400, 600):
-            self.assertTrue(hasattr(handlers, f'handler{i}'))
+    def test_4xx_errors(self) -> None:
+        """Test errors 400, 403, and 404"""
 
-    def test_overridden_settings(self) -> None:
-        """Test views are created dynamically based on application settings"""
+        for error_code in (400, 403, 404):
+            handler = getattr(handlers, f'handler{error_code}')
+            arg_names = self.get_argument_names(handler)
+            self.assertEqual(('request', 'exception'), arg_names)
 
-        with override_settings(SIMPLE_ERROR_CODES=[200, 201]):
-            reload(handlers)
+    def test_500_error(self) -> None:
+        """Test error 500"""
 
-            self.assertFalse(hasattr(handlers, f'handler{199}'))
-            self.assertTrue(hasattr(handlers, f'handler{200}'))
-            self.assertTrue(hasattr(handlers, f'handler{201}'))
-            self.assertFalse(hasattr(handlers, f'handler{203}'))
-
-        reload(handlers)
+        handler = getattr(handlers, 'handler500')
+        arg_names = self.get_argument_names(handler)
+        self.assertEqual(('request',), arg_names)

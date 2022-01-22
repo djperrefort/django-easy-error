@@ -1,13 +1,29 @@
-from django.conf import settings
+from django.http import HttpResponse, HttpRequest
 
-from django_simple_error.factory import view_factory as _view_factory
+from django_simple_error.utils import error_render
 
-# Dynamically define error page handlers based on application settings
-__all__ = []
-for error_code in getattr(settings, "SIMPLE_ERROR_CODES", range(400, 600)):
-    handler = f'handler{error_code}'
-    __all__.append(handler)
-    globals()[handler] = _view_factory(error_code)
+__all__ = ['handler400', 'handler403', 'handler404', 'handler500']
 
-del handler
-del error_code
+
+def handler400(request: HttpRequest, exception: int) -> HttpResponse:
+    """Render a response to a 400 error"""
+
+    return error_render(404, request)
+
+
+def handler403(request: HttpRequest, exception: int) -> HttpResponse:
+    """Render a response to a 403 error"""
+
+    return error_render(404, request)
+
+
+def handler404(request: HttpRequest, exception: int) -> HttpResponse:
+    """Render a response to a 404 error"""
+
+    return error_render(404, request)
+
+
+def handler500(request: HttpRequest) -> HttpResponse:
+    """Render a response to a 500 error"""
+
+    return error_render(404, request)
