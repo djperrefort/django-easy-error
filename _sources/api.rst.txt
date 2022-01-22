@@ -1,10 +1,10 @@
 API Documentation
 =================
 
-django_simple_error.factory
----------------------------
+django_simple_error.utils
+-------------------------
 
-.. automodule:: django_simple_error.factory
+.. automodule:: django_simple_error.utils
    :members:
 
 django_simple_error.handlers

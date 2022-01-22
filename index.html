@@ -70,7 +70,157 @@
              
   <section id="module-django_simple_error">
 <span id="django-simple-error"></span><h1>django-simple-error<a class="headerlink" href="#module-django_simple_error" title="Permalink to this headline"></a></h1>
-<p>A django application for displaying custom error messages.</p>
+<p>A django application for easy handling of custom error pages.</p>
+<p>Django provides <a class="reference external" href="https://docs.djangoproject.com/en/4.0/topics/http/views/#customizing-error-views">built-in support</a>
+for deploying customizing error views. However, this functionality requires
+the definition of custom view objects (and associated tests) that are
+copy and pasted between projects.</p>
+<p>The <code class="docutils literal notranslate"><span class="pre">django-simple-error</span></code> package simplifies the management of custom HTTP
+error pages by packaging redundant code into a dedicated, pip installable
+solution. It provides automatic request routing to user customizable error
+pages for 400, 403, 404, and 500 errors (the same as those supported by
+django).</p>
+<section id="installation">
+<h2>Installation<a class="headerlink" href="#installation" title="Permalink to this headline"></a></h2>
+<p>The <code class="docutils literal notranslate"><span class="pre">django-simple-error</span></code> package is pip installable:</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>$ pip install django-keygen
+</pre></div>
+</div>
+<p>To integrate the package with an existing django application, add it to
+the <code class="docutils literal notranslate"><span class="pre">installed_apps</span></code> list in the application settings:</p>
+<div class="highlight-pycon3 notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">INSTALLED_APPS</span> <span class="o">=</span> <span class="p">[</span>
+<span class="gp">... </span>   <span class="s1">&#39;django-simple-error&#39;</span><span class="p">,</span>
+<span class="gp">... </span><span class="p">]</span>
+</pre></div>
+</div>
+<p>Next, add the following import statement to your project’s root url
+configuration file (I.e., your primary <code class="docutils literal notranslate"><span class="pre">urls.py</span></code> file):</p>
+<div class="highlight-pycon3 notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="kn">from</span> <span class="nn">django_simple_error.handlers</span> <span class="k">import</span> <span class="o">*</span>
+</pre></div>
+</div>
+<p>Although it is not required, you should consider customizing your HTML error
+templates. See below for further instructions.</p>
+</section>
+<section id="configuring-custom-templates">
+<h2>Configuring Custom Templates<a class="headerlink" href="#configuring-custom-templates" title="Permalink to this headline"></a></h2>
+<p>A very simple error page is included with the package out of the box
+(see <a class="reference external" href="https://github.com/djperrefort/django-simple-error/blob/main/django_simple_error/templates/simple_error/default.html">the source</a>
+if your interested in what that template looks like). However, users can easily
+customize their error pages by creating their own template files.</p>
+<p>By default, all HTTP errors are redirected to the HTML template located in
+your template directory under <code class="docutils literal notranslate"><span class="pre">simple_error/default.html</span></code>. Template files
+can also be specified for individual HTTP error codes using the naming scheme
+<code class="docutils literal notranslate"><span class="pre">simple_error/http_[ERROR</span> <span class="pre">CODE].html</span></code>. For example, an 404 error will
+render the template located at <code class="docutils literal notranslate"><span class="pre">simple_error/http_404.html</span></code>.</p>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>Django only supports custom error hanldes for HTTP error codes
+400, 403, 404, and 500. As such, only template for these four errors
+are supported.</p>
+</div>
+<p>Rendered templates are automatically provided different context values
+depending on the corresponding error code.</p>
+<section id="context-values-for-400-errors">
+<h3>Context Values for 400 Errors<a class="headerlink" href="#context-values-for-400-errors" title="Permalink to this headline"></a></h3>
+<table class="docutils align-default">
+<colgroup>
+<col style="width: 32%" />
+<col style="width: 68%" />
+</colgroup>
+<thead>
+<tr class="row-odd"><th class="head"><p>Template Variable Name</p></th>
+<th class="head"><p>Value</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>error_code</p></td>
+<td><p>400</p></td>
+</tr>
+<tr class="row-odd"><td><p>description</p></td>
+<td><p>Bad Request</p></td>
+</tr>
+<tr class="row-even"><td><p>description_long</p></td>
+<td><p>The server could not process your request.</p></td>
+</tr>
+</tbody>
+</table>
+</section>
+<section id="context-values-for-403-errors">
+<h3>Context Values for 403 Errors<a class="headerlink" href="#context-values-for-403-errors" title="Permalink to this headline"></a></h3>
+<table class="docutils align-default">
+<colgroup>
+<col style="width: 28%" />
+<col style="width: 72%" />
+</colgroup>
+<thead>
+<tr class="row-odd"><th class="head"><p>Template Variable Name</p></th>
+<th class="head"><p>Value</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>error_code</p></td>
+<td><p>403</p></td>
+</tr>
+<tr class="row-odd"><td><p>description</p></td>
+<td><p>Forbidden</p></td>
+</tr>
+<tr class="row-even"><td><p>description_long</p></td>
+<td><p>You are not authorized for access to the requested content.</p></td>
+</tr>
+</tbody>
+</table>
+</section>
+<section id="context-values-for-404-errors">
+<h3>Context Values for 404 Errors<a class="headerlink" href="#context-values-for-404-errors" title="Permalink to this headline"></a></h3>
+<table class="docutils align-default">
+<colgroup>
+<col style="width: 30%" />
+<col style="width: 70%" />
+</colgroup>
+<thead>
+<tr class="row-odd"><th class="head"><p>Template Variable Name</p></th>
+<th class="head"><p>Value</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>error_code</p></td>
+<td><p>404</p></td>
+</tr>
+<tr class="row-odd"><td><p>description</p></td>
+<td><p>Page Not Found</p></td>
+</tr>
+<tr class="row-even"><td><p>description_long</p></td>
+<td><p>The server could not find the resource you requested.</p></td>
+</tr>
+</tbody>
+</table>
+</section>
+<section id="context-values-for-500-errors">
+<h3>Context Values for 500 Errors<a class="headerlink" href="#context-values-for-500-errors" title="Permalink to this headline"></a></h3>
+<table class="docutils align-default">
+<colgroup>
+<col style="width: 32%" />
+<col style="width: 68%" />
+</colgroup>
+<thead>
+<tr class="row-odd"><th class="head"><p>Template Variable Name</p></th>
+<th class="head"><p>Value</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>error_code</p></td>
+<td><p>500</p></td>
+</tr>
+<tr class="row-odd"><td><p>description</p></td>
+<td><p>Internal Server Error</p></td>
+</tr>
+<tr class="row-even"><td><p>description_long</p></td>
+<td><p>The server has encountered an internal error.</p></td>
+</tr>
+</tbody>
+</table>
+</section>
+</section>
 <div class="toctree-wrapper compound">
 </div>
 </section>
