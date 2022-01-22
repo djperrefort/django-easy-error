@@ -1,6 +1,7 @@
-name: Documentation
+name: Test Documentation
 
 on:
+  workflow_dispatch:
   pull_request:
     branches: [ main ]
 
