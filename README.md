@@ -5,3 +5,5 @@
 [![PyPi Upload](https://github.com/djperrefort/django-simple-error/actions/workflows/PyPiUpload.yml/badge.svg)](https://github.com/djperrefort/django-simple-error/actions/workflows/PyPiUpload.yml)
 
 Simplified rendering of HTTP error pages in Django.
+
+See the official docs: [http://djperrefort.com/django-simple-error/](http://djperrefort.com/django-simple-error/)
