@@ -17,11 +17,11 @@ def error_render(error_code: int, request: HttpRequest) -> HttpResponse:
     """
 
     try:
-        template = f'django_simple_error/http_{error_code}.html'
+        template = f'simple_error/http_{error_code}.html'
         get_template(template)
 
     except TemplateDoesNotExist:
-        template = 'django_simple_error/default.html'
+        template = 'simple_error/default.html'
 
     context = {
         'error_code': error_code,
