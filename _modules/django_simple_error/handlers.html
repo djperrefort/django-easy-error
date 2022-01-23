@@ -67,7 +67,11 @@
            <div itemprop="articleBody">
              
   <h1>Source code for django_simple_error.handlers</h1><div class="highlight"><pre>
-<span></span><span class="kn">from</span> <span class="nn">django.http</span> <span class="k">import</span> <span class="n">HttpResponse</span><span class="p">,</span> <span class="n">HttpRequest</span>
+<span></span><span class="sd">&quot;&quot;&quot;Handlers are used to process the routing of HTTP errors to the correct</span>
+<span class="sd">template. Handler objects are provided for each of the error views supported by</span>
+<span class="sd">Django.&quot;&quot;&quot;</span>
+
+<span class="kn">from</span> <span class="nn">django.http</span> <span class="k">import</span> <span class="n">HttpResponse</span><span class="p">,</span> <span class="n">HttpRequest</span>
 
 <span class="kn">from</span> <span class="nn">django_simple_error.utils</span> <span class="k">import</span> <span class="n">error_render</span>
 

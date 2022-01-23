@@ -67,7 +67,10 @@
            <div itemprop="articleBody">
              
   <h1>Source code for django_simple_error.utils</h1><div class="highlight"><pre>
-<span></span><span class="kn">from</span> <span class="nn">django.conf</span> <span class="k">import</span> <span class="n">settings</span>
+<span></span><span class="sd">&quot;&quot;&quot;The django rendering logic is wrapped to ensure the correct HTML templates</span>
+<span class="sd">are included rendered for each error code.&quot;&quot;&quot;</span>
+
+<span class="kn">from</span> <span class="nn">django.conf</span> <span class="k">import</span> <span class="n">settings</span>
 <span class="kn">from</span> <span class="nn">django.http</span> <span class="k">import</span> <span class="n">HttpRequest</span><span class="p">,</span> <span class="n">HttpResponse</span>
 <span class="kn">from</span> <span class="nn">django.shortcuts</span> <span class="k">import</span> <span class="n">render</span>
 <span class="kn">from</span> <span class="nn">django.template</span> <span class="k">import</span> <span class="n">TemplateDoesNotExist</span>
