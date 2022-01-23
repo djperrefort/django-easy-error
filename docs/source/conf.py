@@ -5,7 +5,7 @@ sys.path.insert(0, str(Path(__file__).parent.parent.parent))
 
 # -- Project information -----------------------------------------------------
 
-project = 'django-simple-error'
+project = 'django-easy-error'
 copyright = '2022, FamilyTreeCollab'
 author = 'FamilyTreeCollab'
 

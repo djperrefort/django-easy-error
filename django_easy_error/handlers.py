@@ -4,7 +4,7 @@ Django."""
 
 from django.http import HttpResponse, HttpRequest
 
-from django_simple_error.utils import error_render
+from django_easy_error.utils import error_render
 
 __all__ = ['handler400', 'handler403', 'handler404', 'handler500']
 

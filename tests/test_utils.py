@@ -2,7 +2,7 @@ from unittest import TestCase
 
 from django.test import RequestFactory
 
-from django_simple_error.utils import error_render
+from django_easy_error.utils import error_render
 
 
 class TestRenderedResponse(TestCase):

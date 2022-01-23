@@ -1,7 +1,7 @@
 import inspect
 from unittest import TestCase
 
-from django_simple_error import handlers
+from django_easy_error import handlers
 
 
 class HandlerSignatures(TestCase):

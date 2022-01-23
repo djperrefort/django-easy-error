@@ -5,7 +5,7 @@ for deploying customizing error views. However, this functionality requires
 the definition of custom view objects (and associated tests) that are
 copy and pasted between projects.
 
-The ``django-simple-error`` package simplifies the management of custom HTTP
+The ``django-easy-error`` package simplifies the management of custom HTTP
 error pages by packaging redundant code into a dedicated, pip installable
 solution. It provides automatic request routing to user customizable error
 pages for 400, 403, 404, and 500 errors (the same as those supported by
@@ -15,11 +15,11 @@ django).
 Installation
 ------------
 
-The ``django-simple-error`` package is pip installable:
+The ``django-easy-error`` package is pip installable:
 
 .. code-block:: bash
 
-   $ pip install django-keygen
+   $ pip install django-easy-error
 
 To integrate the package with an existing django application, add it to
 the ``installed_apps`` list in the application settings:
@@ -27,7 +27,7 @@ the ``installed_apps`` list in the application settings:
 .. doctest:: python
 
    >>> INSTALLED_APPS = [
-   ...    'django-simple-error',
+   ...    'django-easy-error',
    ... ]
 
 Next, add the following import statement to your project's root url
@@ -35,7 +35,7 @@ configuration file (I.e., your primary ``urls.py`` file):
 
 .. doctest:: python
 
-   >>> from django_simple_error.handlers import *
+   >>> from django_easy_error.handlers import *
 
 
 Although it is not required, you should consider customizing your HTML error
@@ -45,7 +45,7 @@ Configuring Custom Templates
 ----------------------------
 
 A very simple error page is included with the package out of the box
-(see `the source <https://github.com/djperrefort/django-simple-error/blob/main/django_simple_error/templates/simple_error/default.html>`_
+(see `the source <https://github.com/djperrefort/django-easy-error/blob/main/django_easy_error/templates/simple_error/default.html>`_
 if your interested in what that template looks like). However, users can easily
 customize their error pages by creating their own template files.
 
@@ -118,7 +118,7 @@ Context Values for 500 Errors
 
 from django.conf import settings
 
-__version__ = '1.0.0'
+__version__ = '0.0.1'
 __author__ = 'Daniel Perrefort'
 
 # Allow reloading of the module without Django raising an error
