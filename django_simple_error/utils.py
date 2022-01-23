@@ -1,3 +1,6 @@
+"""The django rendering logic is wrapped to ensure the correct HTML templates
+are included rendered for each error code."""
+
 from django.conf import settings
 from django.http import HttpRequest, HttpResponse
 from django.shortcuts import render

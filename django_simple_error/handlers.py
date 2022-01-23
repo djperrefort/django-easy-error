@@ -1,3 +1,7 @@
+"""Handlers are used to process the routing of HTTP errors to the correct
+template. Handler objects are provided for each of the error views supported by
+Django."""
+
 from django.http import HttpResponse, HttpRequest
 
 from django_simple_error.utils import error_render
