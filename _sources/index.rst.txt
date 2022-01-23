@@ -1,7 +1,7 @@
-django-simple-error
-===================
+django-easy-error
+=================
 
-.. automodule:: django_simple_error
+.. automodule:: django_easy_error
 
 .. toctree::
    :hidden:

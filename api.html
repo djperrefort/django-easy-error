@@ -4,7 +4,7 @@
   <meta charset="utf-8" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
 
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>API Documentation &mdash; django-simple-error  documentation</title>
+  <title>API Documentation &mdash; django-easy-error  documentation</title>
       <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
       <link rel="stylesheet" href="_static/css/theme.css" type="text/css" />
       <link rel="stylesheet" href="_static/copybutton.css" type="text/css" />
@@ -21,7 +21,7 @@
     <script src="_static/js/theme.js"></script>
     <link rel="index" title="Index" href="genindex.html" />
     <link rel="search" title="Search" href="search.html" />
-    <link rel="prev" title="django-simple-error" href="index.html" /> 
+    <link rel="prev" title="django-easy-error" href="index.html" /> 
 </head>
 
 <body class="wy-body-for-nav"> 
@@ -29,7 +29,7 @@
     <nav data-toggle="wy-nav-shift" class="wy-nav-side">
       <div class="wy-side-scroll">
         <div class="wy-side-nav-search" >
-            <a href="index.html" class="icon icon-home"> django-simple-error
+            <a href="index.html" class="icon icon-home"> django-easy-error
           </a>
 <div role="search">
   <form id="rtd-search-form" class="wy-form" action="search.html" method="get">
@@ -42,8 +42,8 @@
               <ul class="current">
 <li class="toctree-l1"><a class="reference internal" href="index.html">Overview</a></li>
 <li class="toctree-l1 current"><a class="current reference internal" href="#">API Documentation</a><ul>
-<li class="toctree-l2"><a class="reference internal" href="#module-django_simple_error.utils">django_simple_error.utils</a></li>
-<li class="toctree-l2"><a class="reference internal" href="#module-django_simple_error.handlers">django_simple_error.handlers</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#module-django_easy_error.utils">django_easy_error.utils</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#module-django_easy_error.handlers">django_easy_error.handlers</a></li>
 </ul>
 </li>
 </ul>
@@ -54,7 +54,7 @@
 
     <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap"><nav class="wy-nav-top" aria-label="Mobile navigation menu" >
           <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
-          <a href="index.html">django-simple-error</a>
+          <a href="index.html">django-easy-error</a>
       </nav>
 
       <div class="wy-nav-content">
@@ -74,13 +74,13 @@
              
   <section id="api-documentation">
 <h1>API Documentation<a class="headerlink" href="#api-documentation" title="Permalink to this headline"></a></h1>
-<section id="module-django_simple_error.utils">
-<span id="django-simple-error-utils"></span><h2>django_simple_error.utils<a class="headerlink" href="#module-django_simple_error.utils" title="Permalink to this headline"></a></h2>
+<section id="module-django_easy_error.utils">
+<span id="django-easy-error-utils"></span><h2>django_easy_error.utils<a class="headerlink" href="#module-django_easy_error.utils" title="Permalink to this headline"></a></h2>
 <p>The django rendering logic is wrapped to ensure the correct HTML templates
 are included rendered for each error code.</p>
 <dl class="py function">
-<dt class="sig sig-object py" id="django_simple_error.utils.error_render">
-<span class="sig-prename descclassname"><span class="pre">django_simple_error.utils.</span></span><span class="sig-name descname"><span class="pre">error_render</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">error_code</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">request</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/django_simple_error/utils.html#error_render"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#django_simple_error.utils.error_render" title="Permalink to this definition"></a></dt>
+<dt class="sig sig-object py" id="django_easy_error.utils.error_render">
+<span class="sig-prename descclassname"><span class="pre">django_easy_error.utils.</span></span><span class="sig-name descname"><span class="pre">error_render</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">error_code</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">request</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/django_easy_error/utils.html#error_render"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#django_easy_error.utils.error_render" title="Permalink to this definition"></a></dt>
 <dd><p>Render the appropriate error template for the given error code</p>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters</dt>
@@ -99,14 +99,14 @@ are included rendered for each error code.</p>
 </dd></dl>
 
 </section>
-<section id="module-django_simple_error.handlers">
-<span id="django-simple-error-handlers"></span><h2>django_simple_error.handlers<a class="headerlink" href="#module-django_simple_error.handlers" title="Permalink to this headline"></a></h2>
+<section id="module-django_easy_error.handlers">
+<span id="django-easy-error-handlers"></span><h2>django_easy_error.handlers<a class="headerlink" href="#module-django_easy_error.handlers" title="Permalink to this headline"></a></h2>
 <p>Handlers are used to process the routing of HTTP errors to the correct
 template. Handler objects are provided for each of the error views supported by
 Django.</p>
 <dl class="py function">
-<dt class="sig sig-object py" id="django_simple_error.handlers.handler400">
-<span class="sig-prename descclassname"><span class="pre">django_simple_error.handlers.</span></span><span class="sig-name descname"><span class="pre">handler400</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">request</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">exception</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/django_simple_error/handlers.html#handler400"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#django_simple_error.handlers.handler400" title="Permalink to this definition"></a></dt>
+<dt class="sig sig-object py" id="django_easy_error.handlers.handler400">
+<span class="sig-prename descclassname"><span class="pre">django_easy_error.handlers.</span></span><span class="sig-name descname"><span class="pre">handler400</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">request</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">exception</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/django_easy_error/handlers.html#handler400"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#django_easy_error.handlers.handler400" title="Permalink to this definition"></a></dt>
 <dd><p>Render a response to a 400 error</p>
 <dl class="field-list simple">
 <dt class="field-odd">Return type</dt>
@@ -116,8 +116,8 @@ Django.</p>
 </dd></dl>
 
 <dl class="py function">
-<dt class="sig sig-object py" id="django_simple_error.handlers.handler403">
-<span class="sig-prename descclassname"><span class="pre">django_simple_error.handlers.</span></span><span class="sig-name descname"><span class="pre">handler403</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">request</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">exception</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/django_simple_error/handlers.html#handler403"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#django_simple_error.handlers.handler403" title="Permalink to this definition"></a></dt>
+<dt class="sig sig-object py" id="django_easy_error.handlers.handler403">
+<span class="sig-prename descclassname"><span class="pre">django_easy_error.handlers.</span></span><span class="sig-name descname"><span class="pre">handler403</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">request</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">exception</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/django_easy_error/handlers.html#handler403"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#django_easy_error.handlers.handler403" title="Permalink to this definition"></a></dt>
 <dd><p>Render a response to a 403 error</p>
 <dl class="field-list simple">
 <dt class="field-odd">Return type</dt>
@@ -127,8 +127,8 @@ Django.</p>
 </dd></dl>
 
 <dl class="py function">
-<dt class="sig sig-object py" id="django_simple_error.handlers.handler404">
-<span class="sig-prename descclassname"><span class="pre">django_simple_error.handlers.</span></span><span class="sig-name descname"><span class="pre">handler404</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">request</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">exception</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/django_simple_error/handlers.html#handler404"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#django_simple_error.handlers.handler404" title="Permalink to this definition"></a></dt>
+<dt class="sig sig-object py" id="django_easy_error.handlers.handler404">
+<span class="sig-prename descclassname"><span class="pre">django_easy_error.handlers.</span></span><span class="sig-name descname"><span class="pre">handler404</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">request</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">exception</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/django_easy_error/handlers.html#handler404"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#django_easy_error.handlers.handler404" title="Permalink to this definition"></a></dt>
 <dd><p>Render a response to a 404 error</p>
 <dl class="field-list simple">
 <dt class="field-odd">Return type</dt>
@@ -138,8 +138,8 @@ Django.</p>
 </dd></dl>
 
 <dl class="py function">
-<dt class="sig sig-object py" id="django_simple_error.handlers.handler500">
-<span class="sig-prename descclassname"><span class="pre">django_simple_error.handlers.</span></span><span class="sig-name descname"><span class="pre">handler500</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">request</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/django_simple_error/handlers.html#handler500"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#django_simple_error.handlers.handler500" title="Permalink to this definition"></a></dt>
+<dt class="sig sig-object py" id="django_easy_error.handlers.handler500">
+<span class="sig-prename descclassname"><span class="pre">django_easy_error.handlers.</span></span><span class="sig-name descname"><span class="pre">handler500</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">request</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/django_easy_error/handlers.html#handler500"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#django_easy_error.handlers.handler500" title="Permalink to this definition"></a></dt>
 <dd><p>Render a response to a 500 error</p>
 <dl class="field-list simple">
 <dt class="field-odd">Return type</dt>
@@ -155,7 +155,7 @@ Django.</p>
            </div>
           </div>
           <footer><div class="rst-footer-buttons" role="navigation" aria-label="Footer">
-        <a href="index.html" class="btn btn-neutral float-left" title="django-simple-error" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
+        <a href="index.html" class="btn btn-neutral float-left" title="django-easy-error" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
     </div>
 
   <hr/>

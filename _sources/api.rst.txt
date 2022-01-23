@@ -1,15 +1,15 @@
 API Documentation
 =================
 
-django_simple_error.utils
--------------------------
+django_easy_error.utils
+-----------------------
 
-.. automodule:: django_simple_error.utils
+.. automodule:: django_easy_error.utils
    :members:
 
-django_simple_error.handlers
+django_easy_error.handlers
 ----------------------------
 
-.. automodule:: django_simple_error.handlers
+.. automodule:: django_easy_error.handlers
    :members:
 

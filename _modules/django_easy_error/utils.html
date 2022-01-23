@@ -3,7 +3,7 @@
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>django_simple_error.utils &mdash; django-simple-error  documentation</title>
+  <title>django_easy_error.utils &mdash; django-easy-error  documentation</title>
       <link rel="stylesheet" href="../../_static/pygments.css" type="text/css" />
       <link rel="stylesheet" href="../../_static/css/theme.css" type="text/css" />
       <link rel="stylesheet" href="../../_static/copybutton.css" type="text/css" />
@@ -27,7 +27,7 @@
     <nav data-toggle="wy-nav-shift" class="wy-nav-side">
       <div class="wy-side-scroll">
         <div class="wy-side-nav-search" >
-            <a href="../../index.html" class="icon icon-home"> django-simple-error
+            <a href="../../index.html" class="icon icon-home"> django-easy-error
           </a>
 <div role="search">
   <form id="rtd-search-form" class="wy-form" action="../../search.html" method="get">
@@ -48,7 +48,7 @@
 
     <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap"><nav class="wy-nav-top" aria-label="Mobile navigation menu" >
           <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
-          <a href="../../index.html">django-simple-error</a>
+          <a href="../../index.html">django-easy-error</a>
       </nav>
 
       <div class="wy-nav-content">
@@ -57,7 +57,7 @@
   <ul class="wy-breadcrumbs">
       <li><a href="../../index.html" class="icon icon-home"></a> &raquo;</li>
           <li><a href="../index.html">Module code</a> &raquo;</li>
-      <li>django_simple_error.utils</li>
+      <li>django_easy_error.utils</li>
       <li class="wy-breadcrumbs-aside">
       </li>
   </ul>
@@ -66,7 +66,7 @@
           <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
            <div itemprop="articleBody">
              
-  <h1>Source code for django_simple_error.utils</h1><div class="highlight"><pre>
+  <h1>Source code for django_easy_error.utils</h1><div class="highlight"><pre>
 <span></span><span class="sd">&quot;&quot;&quot;The django rendering logic is wrapped to ensure the correct HTML templates</span>
 <span class="sd">are included rendered for each error code.&quot;&quot;&quot;</span>
 
@@ -77,7 +77,7 @@
 <span class="kn">from</span> <span class="nn">django.template.loader</span> <span class="k">import</span> <span class="n">get_template</span>
 
 
-<div class="viewcode-block" id="error_render"><a class="viewcode-back" href="../../api.html#django_simple_error.utils.error_render">[docs]</a><span class="k">def</span> <span class="nf">error_render</span><span class="p">(</span><span class="n">error_code</span><span class="p">:</span> <span class="nb">int</span><span class="p">,</span> <span class="n">request</span><span class="p">:</span> <span class="n">HttpRequest</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">HttpResponse</span><span class="p">:</span>
+<div class="viewcode-block" id="error_render"><a class="viewcode-back" href="../../api.html#django_easy_error.utils.error_render">[docs]</a><span class="k">def</span> <span class="nf">error_render</span><span class="p">(</span><span class="n">error_code</span><span class="p">:</span> <span class="nb">int</span><span class="p">,</span> <span class="n">request</span><span class="p">:</span> <span class="n">HttpRequest</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">HttpResponse</span><span class="p">:</span>
     <span class="sd">&quot;&quot;&quot;Render the appropriate error template for the given error code</span>
 
 <span class="sd">    Args:</span>

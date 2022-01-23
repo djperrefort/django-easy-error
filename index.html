@@ -4,7 +4,7 @@
   <meta charset="utf-8" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
 
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>django-simple-error &mdash; django-simple-error  documentation</title>
+  <title>django-easy-error &mdash; django-easy-error  documentation</title>
       <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
       <link rel="stylesheet" href="_static/css/theme.css" type="text/css" />
       <link rel="stylesheet" href="_static/copybutton.css" type="text/css" />
@@ -29,7 +29,7 @@
     <nav data-toggle="wy-nav-shift" class="wy-nav-side">
       <div class="wy-side-scroll">
         <div class="wy-side-nav-search" >
-            <a href="#" class="icon icon-home"> django-simple-error
+            <a href="#" class="icon icon-home"> django-easy-error
           </a>
 <div role="search">
   <form id="rtd-search-form" class="wy-form" action="search.html" method="get">
@@ -50,7 +50,7 @@
 
     <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap"><nav class="wy-nav-top" aria-label="Mobile navigation menu" >
           <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
-          <a href="#">django-simple-error</a>
+          <a href="#">django-easy-error</a>
       </nav>
 
       <div class="wy-nav-content">
@@ -58,7 +58,7 @@
           <div role="navigation" aria-label="Page navigation">
   <ul class="wy-breadcrumbs">
       <li><a href="#" class="icon icon-home"></a> &raquo;</li>
-      <li>django-simple-error</li>
+      <li>django-easy-error</li>
       <li class="wy-breadcrumbs-aside">
             <a href="_sources/index.rst.txt" rel="nofollow"> View page source</a>
       </li>
@@ -68,34 +68,34 @@
           <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
            <div itemprop="articleBody">
              
-  <section id="module-django_simple_error">
-<span id="django-simple-error"></span><h1>django-simple-error<a class="headerlink" href="#module-django_simple_error" title="Permalink to this headline"></a></h1>
+  <section id="module-django_easy_error">
+<span id="django-easy-error"></span><h1>django-easy-error<a class="headerlink" href="#module-django_easy_error" title="Permalink to this headline"></a></h1>
 <p>A django application for easy handling of custom error pages.</p>
 <p>Django provides <a class="reference external" href="https://docs.djangoproject.com/en/4.0/topics/http/views/#customizing-error-views">built-in support</a>
 for deploying customizing error views. However, this functionality requires
 the definition of custom view objects (and associated tests) that are
 copy and pasted between projects.</p>
-<p>The <code class="docutils literal notranslate"><span class="pre">django-simple-error</span></code> package simplifies the management of custom HTTP
+<p>The <code class="docutils literal notranslate"><span class="pre">django-easy-error</span></code> package simplifies the management of custom HTTP
 error pages by packaging redundant code into a dedicated, pip installable
 solution. It provides automatic request routing to user customizable error
 pages for 400, 403, 404, and 500 errors (the same as those supported by
 django).</p>
 <section id="installation">
 <h2>Installation<a class="headerlink" href="#installation" title="Permalink to this headline"></a></h2>
-<p>The <code class="docutils literal notranslate"><span class="pre">django-simple-error</span></code> package is pip installable:</p>
-<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>$ pip install django-keygen
+<p>The <code class="docutils literal notranslate"><span class="pre">django-easy-error</span></code> package is pip installable:</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>$ pip install django-easy-error
 </pre></div>
 </div>
 <p>To integrate the package with an existing django application, add it to
 the <code class="docutils literal notranslate"><span class="pre">installed_apps</span></code> list in the application settings:</p>
 <div class="highlight-pycon3 notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">INSTALLED_APPS</span> <span class="o">=</span> <span class="p">[</span>
-<span class="gp">... </span>   <span class="s1">&#39;django-simple-error&#39;</span><span class="p">,</span>
+<span class="gp">... </span>   <span class="s1">&#39;django-easy-error&#39;</span><span class="p">,</span>
 <span class="gp">... </span><span class="p">]</span>
 </pre></div>
 </div>
 <p>Next, add the following import statement to your project’s root url
 configuration file (I.e., your primary <code class="docutils literal notranslate"><span class="pre">urls.py</span></code> file):</p>
-<div class="highlight-pycon3 notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="kn">from</span> <span class="nn">django_simple_error.handlers</span> <span class="k">import</span> <span class="o">*</span>
+<div class="highlight-pycon3 notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="kn">from</span> <span class="nn">django_easy_error.handlers</span> <span class="k">import</span> <span class="o">*</span>
 </pre></div>
 </div>
 <p>Although it is not required, you should consider customizing your HTML error
@@ -104,7 +104,7 @@ templates. See below for further instructions.</p>
 <section id="configuring-custom-templates">
 <h2>Configuring Custom Templates<a class="headerlink" href="#configuring-custom-templates" title="Permalink to this headline"></a></h2>
 <p>A very simple error page is included with the package out of the box
-(see <a class="reference external" href="https://github.com/djperrefort/django-simple-error/blob/main/django_simple_error/templates/simple_error/default.html">the source</a>
+(see <a class="reference external" href="https://github.com/djperrefort/django-easy-error/blob/main/django_easy_error/templates/simple_error/default.html">the source</a>
 if your interested in what that template looks like). However, users can easily
 customize their error pages by creating their own template files.</p>
 <p>By default, all HTTP errors are redirected to the HTML template located in

@@ -3,7 +3,7 @@
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>django_simple_error.handlers &mdash; django-simple-error  documentation</title>
+  <title>django_easy_error.handlers &mdash; django-easy-error  documentation</title>
       <link rel="stylesheet" href="../../_static/pygments.css" type="text/css" />
       <link rel="stylesheet" href="../../_static/css/theme.css" type="text/css" />
       <link rel="stylesheet" href="../../_static/copybutton.css" type="text/css" />
@@ -27,7 +27,7 @@
     <nav data-toggle="wy-nav-shift" class="wy-nav-side">
       <div class="wy-side-scroll">
         <div class="wy-side-nav-search" >
-            <a href="../../index.html" class="icon icon-home"> django-simple-error
+            <a href="../../index.html" class="icon icon-home"> django-easy-error
           </a>
 <div role="search">
   <form id="rtd-search-form" class="wy-form" action="../../search.html" method="get">
@@ -48,7 +48,7 @@
 
     <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap"><nav class="wy-nav-top" aria-label="Mobile navigation menu" >
           <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
-          <a href="../../index.html">django-simple-error</a>
+          <a href="../../index.html">django-easy-error</a>
       </nav>
 
       <div class="wy-nav-content">
@@ -57,7 +57,7 @@
   <ul class="wy-breadcrumbs">
       <li><a href="../../index.html" class="icon icon-home"></a> &raquo;</li>
           <li><a href="../index.html">Module code</a> &raquo;</li>
-      <li>django_simple_error.handlers</li>
+      <li>django_easy_error.handlers</li>
       <li class="wy-breadcrumbs-aside">
       </li>
   </ul>
@@ -66,37 +66,37 @@
           <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
            <div itemprop="articleBody">
              
-  <h1>Source code for django_simple_error.handlers</h1><div class="highlight"><pre>
+  <h1>Source code for django_easy_error.handlers</h1><div class="highlight"><pre>
 <span></span><span class="sd">&quot;&quot;&quot;Handlers are used to process the routing of HTTP errors to the correct</span>
 <span class="sd">template. Handler objects are provided for each of the error views supported by</span>
 <span class="sd">Django.&quot;&quot;&quot;</span>
 
 <span class="kn">from</span> <span class="nn">django.http</span> <span class="k">import</span> <span class="n">HttpResponse</span><span class="p">,</span> <span class="n">HttpRequest</span>
 
-<span class="kn">from</span> <span class="nn">django_simple_error.utils</span> <span class="k">import</span> <span class="n">error_render</span>
+<span class="kn">from</span> <span class="nn">django_easy_error.utils</span> <span class="k">import</span> <span class="n">error_render</span>
 
 <span class="n">__all__</span> <span class="o">=</span> <span class="p">[</span><span class="s1">&#39;handler400&#39;</span><span class="p">,</span> <span class="s1">&#39;handler403&#39;</span><span class="p">,</span> <span class="s1">&#39;handler404&#39;</span><span class="p">,</span> <span class="s1">&#39;handler500&#39;</span><span class="p">]</span>
 
 
-<div class="viewcode-block" id="handler400"><a class="viewcode-back" href="../../api.html#django_simple_error.handlers.handler400">[docs]</a><span class="k">def</span> <span class="nf">handler400</span><span class="p">(</span><span class="n">request</span><span class="p">:</span> <span class="n">HttpRequest</span><span class="p">,</span> <span class="n">exception</span><span class="p">:</span> <span class="nb">int</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">HttpResponse</span><span class="p">:</span>
+<div class="viewcode-block" id="handler400"><a class="viewcode-back" href="../../api.html#django_easy_error.handlers.handler400">[docs]</a><span class="k">def</span> <span class="nf">handler400</span><span class="p">(</span><span class="n">request</span><span class="p">:</span> <span class="n">HttpRequest</span><span class="p">,</span> <span class="n">exception</span><span class="p">:</span> <span class="nb">int</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">HttpResponse</span><span class="p">:</span>
     <span class="sd">&quot;&quot;&quot;Render a response to a 400 error&quot;&quot;&quot;</span>
 
     <span class="k">return</span> <span class="n">error_render</span><span class="p">(</span><span class="mi">404</span><span class="p">,</span> <span class="n">request</span><span class="p">)</span></div>
 
 
-<div class="viewcode-block" id="handler403"><a class="viewcode-back" href="../../api.html#django_simple_error.handlers.handler403">[docs]</a><span class="k">def</span> <span class="nf">handler403</span><span class="p">(</span><span class="n">request</span><span class="p">:</span> <span class="n">HttpRequest</span><span class="p">,</span> <span class="n">exception</span><span class="p">:</span> <span class="nb">int</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">HttpResponse</span><span class="p">:</span>
+<div class="viewcode-block" id="handler403"><a class="viewcode-back" href="../../api.html#django_easy_error.handlers.handler403">[docs]</a><span class="k">def</span> <span class="nf">handler403</span><span class="p">(</span><span class="n">request</span><span class="p">:</span> <span class="n">HttpRequest</span><span class="p">,</span> <span class="n">exception</span><span class="p">:</span> <span class="nb">int</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">HttpResponse</span><span class="p">:</span>
     <span class="sd">&quot;&quot;&quot;Render a response to a 403 error&quot;&quot;&quot;</span>
 
     <span class="k">return</span> <span class="n">error_render</span><span class="p">(</span><span class="mi">404</span><span class="p">,</span> <span class="n">request</span><span class="p">)</span></div>
 
 
-<div class="viewcode-block" id="handler404"><a class="viewcode-back" href="../../api.html#django_simple_error.handlers.handler404">[docs]</a><span class="k">def</span> <span class="nf">handler404</span><span class="p">(</span><span class="n">request</span><span class="p">:</span> <span class="n">HttpRequest</span><span class="p">,</span> <span class="n">exception</span><span class="p">:</span> <span class="nb">int</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">HttpResponse</span><span class="p">:</span>
+<div class="viewcode-block" id="handler404"><a class="viewcode-back" href="../../api.html#django_easy_error.handlers.handler404">[docs]</a><span class="k">def</span> <span class="nf">handler404</span><span class="p">(</span><span class="n">request</span><span class="p">:</span> <span class="n">HttpRequest</span><span class="p">,</span> <span class="n">exception</span><span class="p">:</span> <span class="nb">int</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">HttpResponse</span><span class="p">:</span>
     <span class="sd">&quot;&quot;&quot;Render a response to a 404 error&quot;&quot;&quot;</span>
 
     <span class="k">return</span> <span class="n">error_render</span><span class="p">(</span><span class="mi">404</span><span class="p">,</span> <span class="n">request</span><span class="p">)</span></div>
 
 
-<div class="viewcode-block" id="handler500"><a class="viewcode-back" href="../../api.html#django_simple_error.handlers.handler500">[docs]</a><span class="k">def</span> <span class="nf">handler500</span><span class="p">(</span><span class="n">request</span><span class="p">:</span> <span class="n">HttpRequest</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">HttpResponse</span><span class="p">:</span>
+<div class="viewcode-block" id="handler500"><a class="viewcode-back" href="../../api.html#django_easy_error.handlers.handler500">[docs]</a><span class="k">def</span> <span class="nf">handler500</span><span class="p">(</span><span class="n">request</span><span class="p">:</span> <span class="n">HttpRequest</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">HttpResponse</span><span class="p">:</span>
     <span class="sd">&quot;&quot;&quot;Render a response to a 500 error&quot;&quot;&quot;</span>
 
     <span class="k">return</span> <span class="n">error_render</span><span class="p">(</span><span class="mi">404</span><span class="p">,</span> <span class="n">request</span><span class="p">)</span></div>
