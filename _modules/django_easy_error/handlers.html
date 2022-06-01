@@ -14,6 +14,7 @@
         <script data-url_root="../../" id="documentation_options" src="../../_static/documentation_options.js"></script>
         <script src="../../_static/jquery.js"></script>
         <script src="../../_static/underscore.js"></script>
+        <script src="../../_static/_sphinx_javascript_frameworks_compat.js"></script>
         <script src="../../_static/doctools.js"></script>
         <script src="../../_static/clipboard.min.js"></script>
         <script src="../../_static/copybutton.js"></script>
@@ -67,9 +68,12 @@
            <div itemprop="articleBody">
              
   <h1>Source code for django_easy_error.handlers</h1><div class="highlight"><pre>
-<span></span><span class="sd">&quot;&quot;&quot;Handlers are used to process the routing of HTTP errors to the correct</span>
+<span></span><span class="sd">&quot;&quot;&quot;Request handlers for different error codes.</span>
+
+<span class="sd">Handlers are used to process the routing of HTTP errors to the correct</span>
 <span class="sd">template. Handler objects are provided for each of the error views supported by</span>
-<span class="sd">Django.&quot;&quot;&quot;</span>
+<span class="sd">Django.</span>
+<span class="sd">&quot;&quot;&quot;</span>
 
 <span class="kn">from</span> <span class="nn">django.http</span> <span class="k">import</span> <span class="n">HttpResponse</span><span class="p">,</span> <span class="n">HttpRequest</span>
 

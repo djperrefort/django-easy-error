@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html class="writer-html5" lang="en" >
 <head>
-  <meta charset="utf-8" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
+  <meta charset="utf-8" /><meta name="generator" content="Docutils 0.18.1: http://docutils.sourceforge.net/" />
 
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>API Documentation &mdash; django-easy-error  documentation</title>
@@ -15,6 +15,7 @@
         <script data-url_root="./" id="documentation_options" src="_static/documentation_options.js"></script>
         <script src="_static/jquery.js"></script>
         <script src="_static/underscore.js"></script>
+        <script src="_static/_sphinx_javascript_frameworks_compat.js"></script>
         <script src="_static/doctools.js"></script>
         <script src="_static/clipboard.min.js"></script>
         <script src="_static/copybutton.js"></script>
@@ -73,9 +74,9 @@
            <div itemprop="articleBody">
              
   <section id="api-documentation">
-<h1>API Documentation<a class="headerlink" href="#api-documentation" title="Permalink to this headline"></a></h1>
+<h1>API Documentation<a class="headerlink" href="#api-documentation" title="Permalink to this heading"></a></h1>
 <section id="module-django_easy_error.utils">
-<span id="django-easy-error-utils"></span><h2>django_easy_error.utils<a class="headerlink" href="#module-django_easy_error.utils" title="Permalink to this headline"></a></h2>
+<span id="django-easy-error-utils"></span><h2>django_easy_error.utils<a class="headerlink" href="#module-django_easy_error.utils" title="Permalink to this heading"></a></h2>
 <p>The django rendering logic is wrapped to ensure the correct HTML templates
 are included rendered for each error code.</p>
 <dl class="py function">
@@ -83,16 +84,16 @@ are included rendered for each error code.</p>
 <span class="sig-prename descclassname"><span class="pre">django_easy_error.utils.</span></span><span class="sig-name descname"><span class="pre">error_render</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">error_code</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">request</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/django_easy_error/utils.html#error_render"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#django_easy_error.utils.error_render" title="Permalink to this definition"></a></dt>
 <dd><p>Render the appropriate error template for the given error code</p>
 <dl class="field-list simple">
-<dt class="field-odd">Parameters</dt>
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
 <dd class="field-odd"><ul class="simple">
 <li><p><strong>error_code</strong> (<code class="xref py py-class docutils literal notranslate"><span class="pre">int</span></code>) – The HTTP error code to render a response for</p></li>
 <li><p><strong>request</strong> (<code class="xref py py-class docutils literal notranslate"><span class="pre">HttpRequest</span></code>) – The incoming HTTP request</p></li>
 </ul>
 </dd>
-<dt class="field-even">Return type</dt>
+<dt class="field-even">Return type<span class="colon">:</span></dt>
 <dd class="field-even"><p><code class="xref py py-class docutils literal notranslate"><span class="pre">HttpResponse</span></code></p>
 </dd>
-<dt class="field-odd">Returns</dt>
+<dt class="field-odd">Returns<span class="colon">:</span></dt>
 <dd class="field-odd"><p>A rendered HTTP response</p>
 </dd>
 </dl>
@@ -100,7 +101,8 @@ are included rendered for each error code.</p>
 
 </section>
 <section id="module-django_easy_error.handlers">
-<span id="django-easy-error-handlers"></span><h2>django_easy_error.handlers<a class="headerlink" href="#module-django_easy_error.handlers" title="Permalink to this headline"></a></h2>
+<span id="django-easy-error-handlers"></span><h2>django_easy_error.handlers<a class="headerlink" href="#module-django_easy_error.handlers" title="Permalink to this heading"></a></h2>
+<p>Request handlers for different error codes.</p>
 <p>Handlers are used to process the routing of HTTP errors to the correct
 template. Handler objects are provided for each of the error views supported by
 Django.</p>
@@ -109,7 +111,7 @@ Django.</p>
 <span class="sig-prename descclassname"><span class="pre">django_easy_error.handlers.</span></span><span class="sig-name descname"><span class="pre">handler400</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">request</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">exception</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/django_easy_error/handlers.html#handler400"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#django_easy_error.handlers.handler400" title="Permalink to this definition"></a></dt>
 <dd><p>Render a response to a 400 error</p>
 <dl class="field-list simple">
-<dt class="field-odd">Return type</dt>
+<dt class="field-odd">Return type<span class="colon">:</span></dt>
 <dd class="field-odd"><p><code class="xref py py-class docutils literal notranslate"><span class="pre">HttpResponse</span></code></p>
 </dd>
 </dl>
@@ -120,7 +122,7 @@ Django.</p>
 <span class="sig-prename descclassname"><span class="pre">django_easy_error.handlers.</span></span><span class="sig-name descname"><span class="pre">handler403</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">request</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">exception</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/django_easy_error/handlers.html#handler403"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#django_easy_error.handlers.handler403" title="Permalink to this definition"></a></dt>
 <dd><p>Render a response to a 403 error</p>
 <dl class="field-list simple">
-<dt class="field-odd">Return type</dt>
+<dt class="field-odd">Return type<span class="colon">:</span></dt>
 <dd class="field-odd"><p><code class="xref py py-class docutils literal notranslate"><span class="pre">HttpResponse</span></code></p>
 </dd>
 </dl>
@@ -131,7 +133,7 @@ Django.</p>
 <span class="sig-prename descclassname"><span class="pre">django_easy_error.handlers.</span></span><span class="sig-name descname"><span class="pre">handler404</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">request</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">exception</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/django_easy_error/handlers.html#handler404"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#django_easy_error.handlers.handler404" title="Permalink to this definition"></a></dt>
 <dd><p>Render a response to a 404 error</p>
 <dl class="field-list simple">
-<dt class="field-odd">Return type</dt>
+<dt class="field-odd">Return type<span class="colon">:</span></dt>
 <dd class="field-odd"><p><code class="xref py py-class docutils literal notranslate"><span class="pre">HttpResponse</span></code></p>
 </dd>
 </dl>
@@ -142,7 +144,7 @@ Django.</p>
 <span class="sig-prename descclassname"><span class="pre">django_easy_error.handlers.</span></span><span class="sig-name descname"><span class="pre">handler500</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">request</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/django_easy_error/handlers.html#handler500"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#django_easy_error.handlers.handler500" title="Permalink to this definition"></a></dt>
 <dd><p>Render a response to a 500 error</p>
 <dl class="field-list simple">
-<dt class="field-odd">Return type</dt>
+<dt class="field-odd">Return type<span class="colon">:</span></dt>
 <dd class="field-odd"><p><code class="xref py py-class docutils literal notranslate"><span class="pre">HttpResponse</span></code></p>
 </dd>
 </dl>
