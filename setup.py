@@ -5,11 +5,15 @@ from setuptools import find_packages, setup
 
 
 def load_requirements():
+    """Return a list of package dependencies from the project requirements file"""
+
     with open('requirements.txt') as f:
         return f.read().splitlines()
 
 
 def get_meta():
+    """Return the package version and author as defined in the package __init__ file."""
+
     init_path = Path(__file__).resolve().parent / 'django_easy_error/__init__.py'
     with init_path.open('r') as infile:
         init_content = infile.read()
@@ -23,10 +27,10 @@ def get_meta():
     return version, author
 
 
-version, author = get_meta()
+_version, _author = get_meta()
 setup(name='django-easy-error',
-      version=version,
-      author=author,
+      version=_version,
+      author=_author,
       packages=find_packages(),
       keywords='Django HTTP Error Pages',
       description='Easy template integration for django error pages',

@@ -118,7 +118,7 @@ Context Values for 500 Errors
 
 from django.conf import settings
 
-__version__ = '1.0.0'
+__version__ = '1.0.1'
 __author__ = 'Daniel Perrefort'
 
 # Allow reloading of the module without Django raising an error
