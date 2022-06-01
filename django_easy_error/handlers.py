@@ -1,6 +1,9 @@
-"""Handlers are used to process the routing of HTTP errors to the correct
+"""Request handlers for different error codes.
+
+Handlers are used to process the routing of HTTP errors to the correct
 template. Handler objects are provided for each of the error views supported by
-Django."""
+Django.
+"""
 
 from django.http import HttpResponse, HttpRequest
 
