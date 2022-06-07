@@ -15,13 +15,13 @@ __all__ = ['handler400', 'handler403', 'handler404', 'handler500']
 def handler400(request: HttpRequest, exception: int) -> HttpResponse:
     """Render a response to a 400 error"""
 
-    return error_render(404, request)
+    return error_render(400, request)
 
 
 def handler403(request: HttpRequest, exception: int) -> HttpResponse:
     """Render a response to a 403 error"""
 
-    return error_render(404, request)
+    return error_render(403, request)
 
 
 def handler404(request: HttpRequest, exception: int) -> HttpResponse:
@@ -33,4 +33,4 @@ def handler404(request: HttpRequest, exception: int) -> HttpResponse:
 def handler500(request: HttpRequest) -> HttpResponse:
     """Render a response to a 500 error"""
 
-    return error_render(404, request)
+    return error_render(500, request)
