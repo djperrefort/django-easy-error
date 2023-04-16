@@ -34,3 +34,4 @@ def handler500(request: HttpRequest) -> HttpResponse:
     """Render a response to a 500 error"""
 
     return error_render(500, request)
+
